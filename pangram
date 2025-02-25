@@ -1,0 +1,16 @@
+bool checkIfPangram(char* sentence) {
+    int i=0,j=0;
+    int count=0;
+ for(i='a';i<='z';i++){
+for(j=0;j<strlen(sentence);j++){
+    if(i==sentence[j]){
+  count++;
+  break;
+}
+}
+ }
+    if(count>=26)
+    return true;
+    else
+    return false;
+}
