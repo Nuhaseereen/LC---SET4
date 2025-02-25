@@ -1,0 +1,23 @@
+int* numberGame(int* nums, int numsSize, int* returnSize) {
+    int t;
+     *returnSize=numsSize;
+     for(int i=0;i<numsSize;i++)
+   {
+    for(int j=i+1;j<numsSize;j++)
+    {
+        if(*(nums+i)>*(nums+j))
+        {
+          t=(*(nums+i));
+          (*(nums+i))=(*(nums+j));
+          (*(nums+j))=t;
+        }
+    }
+   } 
+   int *arr= (int*)malloc(numsSize*sizeof(int));
+   for(int k=0;k<numsSize;k=k+2)
+   {
+    arr[k]=*(nums+k+1);
+    arr[k+1]=*(nums+k);
+    }
+    return arr;
+}
