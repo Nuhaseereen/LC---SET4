@@ -1,0 +1,18 @@
+#include <string.h>
+char* firstPalindrome(char** words, int wordsSize) {
+    int i;
+    for ( i = 0; i < wordsSize; i++) {
+        int l = strlen(words[i]); 
+        char a[l + 1];       
+        int k = 0;
+        for (int j = l - 1; j >= 0; j--) {
+            a[k] = words[i][j];
+            k++;
+        }
+        a[k] = '\0';  
+        if (strcmp(words[i], a) == 0) {
+            return words[i]; 
+        }
+    }
+    return ""; 
+}
